@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de Programación - Inicio</title>
+    <meta name="description" content="Plataforma de aprendizaje para el curso de Fundamentos de Programación. Accede a los contenidos de todas las unidades.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">FP_2026</a>
+            <ul class="menu">
+                <li class="menu-item"><a href="index.html">Inicio</a></li>
+                <li class="menu-item"><a href="unidad_1/index.html">Unidad 1</a></li>
+                <!-- Futuras unidades se agregarán aquí -->
+                <li class="menu-item"><a href="#" style="opacity: 0.5; cursor: not-allowed;">Próximamente</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1 class="animate-up">Fundamentos de <br><span style="color: var(--secondary)">Programación</span></h1>
+            <p class="animate-up delay-1">Explora los conceptos básicos, lógica y estructuras necesarias para dominar el arte del desarrollo de software.</p>
+            <div class="animate-up delay-2">
+                <a href="unidad_1/index.html" class="btn btn-primary">Comenzar Unidad 1</a>
+            </div>
+        </section>
+
+        <section class="units-grid">
+            <a href="unidad_1/index.html" class="unit-card animate-up">
+                <div class="unit-number">01</div>
+                <span class="badge">Disponible</span>
+                <h3>Unidad 1: Introducción</h3>
+                <p>Metodología para la solución de problemas y fundamentos de algoritmos.</p>
+                <div style="color: var(--secondary); font-weight: 600; font-size: 0.9rem;">Ver contenido →</div>
+            </a>
+
+            <!-- Placeholder for future units -->
+            <div class="unit-card" style="opacity: 0.6; cursor: default;">
+                <div class="unit-number">02</div>
+                <span class="badge" style="background: rgba(255,255,255,0.05); color: var(--text-muted);">Bloqueado</span>
+                <h3>Unidad 2: Estructuras</h3>
+                <p>Estructuras de control, condicionales y ciclos repetitivos.</p>
+            </div>
+
+            <div class="unit-card" style="opacity: 0.6; cursor: default;">
+                <div class="unit-number">03</div>
+                <span class="badge" style="background: rgba(255,255,255,0.05); color: var(--text-muted);">Bloqueado</span>
+                <h3>Unidad 3: Funciones</h3>
+                <p>Modularización, parámetros y retorno de valores.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 4rem 0; color: var(--text-muted); border-top: 1px solid var(--glass-border); margin-top: 4rem;">
+        <p>&copy; 2026 Fundamentos de Programación. Diseñado para el aprendizaje.</p>
+    </footer>
+
+    <script>
+        // Simple interactive effect for the menu
+        document.querySelectorAll('.menu-item a').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                // Potential for more complex animations
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.unit-card').forEach(card => observer.observe(card));
+    </script>
+</body>
+</html>
